@@ -1,6 +1,11 @@
+# Base image
 FROM node:alpine
-COPY index.js /app/index.js
-COPY package.json /app/package.json
-RUN cd /app && npm install
+# Create app directory
+WORKDIR /usr/src/app
+# Install app dependencies
+COPY package*.json ./
+RUN npm install
+# Bundle app source
+COPY . .
 EXPOSE 3005
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]

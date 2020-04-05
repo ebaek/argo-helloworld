@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hello-deployment
-        image: docker.io/ebaek19/argo-hello:2.0
+        image: docker.io/ebaek19/hello-world:1.0
         resources:
           limits:
             memory: "128Mi"
